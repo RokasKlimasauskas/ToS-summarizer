@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 
-def fetch_tos_content(url):
+def _fetch_tos_content(url):
     chrome_options = Options()
     chrome_options.add_argument('--headless')  # Run in headless mode
     chrome_driver_path = 'chromedriver.exe'  # Replace with the actual path to your ChromeDriver
@@ -19,12 +19,12 @@ def fetch_tos_content(url):
     driver.quit()
     return page_source
 
-def parse_tos_content(page_source):
+def _parse_tos_content(page_source):
     soup = BeautifulSoup(page_source, 'html.parser')
     return soup.get_text()
 
 def content(web_url):
-    tos_content_fetched = fetch_tos_content(web_url)
-    tos_content_parsed = parse_tos_content(tos_content_fetched)
+    tos_content_fetched = _fetch_tos_content(web_url)
+    tos_content_parsed = _parse_tos_content(tos_content_fetched)
     return tos_content_parsed
 
