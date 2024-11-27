@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToS Summarizer</title>
+</head>
+<body>
+    <h1>Terms of Service Summarizer</h1>
+    <form action="/summarize" method="post">
+        <label for="url">Enter ToS URL:</label><br>
+        <input type="text" id="url" name="url" size="100" required><br> 
+        <button type="submit">Summarize</button>
+    </form>
+    <form action="/shutdown" method="post">
+        <button type="submit">Shutdown Server</button>
+    </form>
+</body>
+</html>
