@@ -1,6 +1,4 @@
 import openai
-from dotenv import load_dotenv
-import os
 
 def generate_text(prompt):
     response = openai.chat.completions.create(
